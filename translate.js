@@ -8,11 +8,11 @@ const configuration = new Configuration({
 });
 const openai = new OpenAIApi(configuration);
 
-async function transcribe() {
-    const resp = await openai.createTranscription(
-        fs.createReadStream("audio/test-audio02.webm"),
+async function translate() {
+    const resp = await openai.createTranslation(
+        fs.createReadStream("audio/test-audio04.webm"),
         "whisper-1",
-        "Erm, you know, haha.",
+        // "Erm, you know, haha.",
         // "Words",
         // You can add other parameters here. For example:
         // response_format: 'text',
@@ -23,5 +23,5 @@ async function transcribe() {
     console.log(resp.data);
 }
 
-transcribe();
+translate();
 
